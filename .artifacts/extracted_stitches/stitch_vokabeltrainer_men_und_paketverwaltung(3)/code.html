@@ -1,0 +1,247 @@
+<!DOCTYPE html><html class="h-full bg-surface" lang="de"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Voca - Vokabeltrainer</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-dim": "#d2d9f4",
+            "surface-variant": "#dae2fd",
+            "error": "#ba1a1a",
+            "surface-bright": "#faf8ff",
+            "tertiary-container": "#996100",
+            "on-primary-container": "#eeefff",
+            "secondary-container": "#6cf8bb",
+            "on-primary-fixed-variant": "#003ea8",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary-container": "#00714d",
+            "primary": "#004ac6",
+            "on-tertiary-container": "#ffeedd",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "background": "#faf8ff",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-surface": "#283044",
+            "error-container": "#ffdad6",
+            "surface-tint": "#0053db",
+            "on-secondary-fixed": "#002113",
+            "outline-variant": "#c3c6d7",
+            "primary-fixed": "#dbe1ff",
+            "surface-container-high": "#e2e7ff",
+            "inverse-primary": "#b4c5ff",
+            "on-primary-fixed": "#00174b",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed": "#6ffbbe",
+            "tertiary-fixed": "#ffddb8",
+            "on-surface-variant": "#434655",
+            "surface-container": "#eaedff",
+            "outline": "#737686",
+            "on-surface": "#131b2e",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "surface": "#faf8ff",
+            "on-primary": "#ffffff",
+            "tertiary": "#784b00",
+            "primary-container": "#2563eb",
+            "primary-fixed-dim": "#b4c5ff",
+            "secondary": "#006c49",
+            "on-background": "#131b2e",
+            "surface-container-highest": "#dae2fd",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "space-xs": "0.5rem",
+            "space-2xs": "0.25rem",
+            "space-md": "1rem",
+            "space-2xl": "3rem",
+            "space-sm": "0.75rem",
+            "margin-desktop": "2rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="h-full bg-surface text-on-surface antialiased flex flex-col justify-between selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Shell Wrapper -->
+<div class="w-full max-w-[480px] mx-auto min-h-screen flex flex-col bg-surface shadow-2xl relative pb-20">
+<!-- Top Navigation Anchor (Shared Component Execution) -->
+<header class="w-full bg-surface z-40 sticky top-0 pt-2 pb-3 px-margin">
+<div class="flex justify-between items-center w-full h-12">
+<!-- Leading Back Action -->
+<button aria-label="Zurück" class="flex items-center justify-center w-10 h-10 -ml-2 rounded-xl text-on-surface-variant hover:bg-surface-container active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<!-- Center Metadata & Progress -->
+<div class="flex flex-col items-center flex-1 mx-2">
+<h1 class="text-headline-sm font-headline-sm font-bold text-on-surface tracking-tight">Lernen</h1>
+<span class="text-label-sm font-label-sm text-outline tracking-wider font-semibold">Karte 4 von 12</span>
+</div>
+<!-- Trailing Action -->
+<button aria-label="Optionen" class="flex items-center justify-center w-10 h-10 -mr-2 rounded-xl text-on-surface-variant hover:bg-surface-container active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</div>
+<!-- Linear Progress Bar -->
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden mt-2">
+<div class="bg-primary-container h-full w-[33%] rounded-full transition-all duration-300 ease-out"></div>
+</div>
+</header>
+<!-- Main Content Area / Flashcard Canvas -->
+<main class="flex-1 px-margin flex flex-col justify-center items-center py-space-sm">
+<!-- Vocabulary Study Card (Level 2 Elevation) -->
+<article class="w-full bg-surface-container-lowest rounded-[20px] p-space-lg flex flex-col justify-between border border-outline-variant/40 shadow-[0_10px_25px_-4px_rgba(15,23,42,0.06),0_4px_8px_-2px_rgba(15,23,42,0.03)] transition-all">
+<!-- Top Status & Context -->
+<div>
+<div class="flex items-center justify-between pb-space-md border-b border-surface-container">
+<span class="text-label-sm font-label-sm tracking-wider text-outline uppercase font-bold">Unregelmäßiges Verb</span>
+<div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-low border border-outline-variant/50">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Aufgedeckt</span>
+</div>
+</div>
+<!-- Main Term & Translation -->
+<div class="pt-space-lg text-center flex flex-col items-center">
+<h2 class="text-display-lg-mobile font-display-lg-mobile text-on-surface tracking-tight font-extrabold">
+              Speak
+            </h2>
+<p class="mt-space-xs text-headline-sm font-headline-sm text-primary font-medium tracking-normal">
+              Sprechen, reden
+            </p>
+</div>
+</div>
+<!-- Four Forms Section (Clean Grid) -->
+<div class="my-space-xl">
+<div class="grid grid-cols-2 gap-space-xs bg-surface p-space-xs rounded-xl border border-outline-variant/30">
+<!-- Form 1 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-outline font-semibold">Infinitiv</span>
+<span class="text-body-md font-body-md font-semibold text-on-surface mt-0.5">speak</span>
+</div>
+<!-- Form 2 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-outline font-semibold">Past Tense</span>
+<span class="text-body-md font-body-md font-semibold text-on-surface mt-0.5">spoke</span>
+</div>
+<!-- Form 3 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-outline font-semibold">Partizip II</span>
+<span class="text-body-md font-body-md font-semibold text-on-surface mt-0.5">spoken</span>
+</div>
+<!-- Form 4 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-outline font-semibold">3. Person Sg.</span>
+<span class="text-body-md font-body-md font-semibold text-on-surface mt-0.5">speaks</span>
+</div>
+</div>
+</div>
+<!-- Sample Sentence Context -->
+
+</article>
+<!-- SRS Rating Bar (4 Assessment Options) -->
+<section aria-label="Wiederholungsintervall bewerten" class="w-full mt-space-lg">
+<div class="grid grid-cols-4 gap-2 w-full">
+<!-- Rating: Nochmal -->
+<button class="group flex flex-col items-center justify-center h-14 bg-error-container/40 border border-error/20 rounded-xl active:scale-95 transition-all duration-150 hover:bg-error-container/60" type="button">
+<span class="text-label-md font-label-md font-bold text-error">Nochmal</span>
+<span class="text-label-sm font-label-sm font-medium text-error mt-0.5">&lt; 1 Min</span>
+</button>
+<!-- Rating: Schwer -->
+<button class="group flex flex-col items-center justify-center h-14 bg-surface-container border border-outline-variant/40 rounded-xl active:scale-95 transition-all duration-150 hover:bg-surface-container-high" type="button">
+<span class="text-label-md font-label-md font-bold text-on-surface">Schwer</span>
+<span class="text-label-sm font-label-sm font-medium text-outline mt-0.5">2 Tage</span>
+</button>
+<!-- Rating: Gut -->
+<button class="group flex flex-col items-center justify-center h-14 bg-secondary-container/30 border border-secondary/20 rounded-xl active:scale-95 transition-all duration-150 hover:bg-secondary-container/50" type="button">
+<span class="text-label-md font-label-md font-bold text-on-secondary-container">Gut</span>
+<span class="text-label-sm font-label-sm font-medium text-on-secondary-container mt-0.5">4 Tage</span>
+</button>
+<!-- Rating: Einfach -->
+<button class="group flex flex-col items-center justify-center h-14 bg-primary-container text-on-primary rounded-xl active:scale-95 transition-all duration-150 shadow-sm hover:brightness-105" type="button">
+<span class="text-label-md font-label-md font-bold text-on-primary">Einfach</span>
+<span class="text-label-sm font-label-sm font-medium text-on-primary-container mt-0.5">7 Tage</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Shared Component Anchor) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant/30 max-w-[480px] mx-auto shadow-sm">
+<div class="flex justify-around items-center h-16 px-space-xs">
+<!-- Tab: Study (Active per context) -->
+<a class="flex flex-col items-center justify-center text-primary font-semibold p-1 active:scale-95 transition-transform duration-150" href="#study">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">style</span>
+<span class="text-label-sm font-label-sm mt-0.5">Study</span>
+</a>
+<!-- Tab: Review -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-1 hover:bg-surface-container active:scale-95 transition-transform duration-150 rounded-lg" href="#review">
+<span class="material-symbols-outlined text-[22px]">replay</span>
+<span class="text-label-sm font-label-sm mt-0.5">Review</span>
+</a>
+<!-- Tab: Write -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-1 hover:bg-surface-container active:scale-95 transition-transform duration-150 rounded-lg" href="#write">
+<span class="material-symbols-outlined text-[22px]">edit_note</span>
+<span class="text-label-sm font-label-sm mt-0.5">Write</span>
+</a>
+<!-- Tab: Stats -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-1 hover:bg-surface-container active:scale-95 transition-transform duration-150 rounded-lg" href="#stats">
+<span class="material-symbols-outlined text-[22px]">bar_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">Stats</span>
+</a>
+</div>
+</nav>
+</div>
+
+
+</body></html>

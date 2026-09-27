@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="de" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Voca - Paketverwaltung &amp; Zeiträume</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#434655",
+            "on-background": "#131b2e",
+            "outline-variant": "#c3c6d7",
+            "on-primary-container": "#eeefff",
+            "primary": "#004ac6",
+            "error": "#ba1a1a",
+            "background": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "surface-bright": "#faf8ff",
+            "on-primary-fixed": "#00174b",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#dbe1ff",
+            "on-secondary-fixed": "#002113",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "on-tertiary-container": "#ffeedd",
+            "surface-container": "#eaedff",
+            "on-surface": "#131b2e",
+            "surface-tint": "#0053db",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-container": "#00714d",
+            "on-secondary-fixed-variant": "#005236",
+            "secondary-fixed": "#6ffbbe",
+            "secondary-fixed-dim": "#4edea3",
+            "surface": "#faf8ff",
+            "error-container": "#ffdad6",
+            "surface-variant": "#dae2fd",
+            "secondary": "#006c49",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "secondary-container": "#6cf8bb",
+            "tertiary-container": "#996100",
+            "outline": "#737686",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#ffddb8",
+            "tertiary": "#784b00",
+            "on-tertiary-fixed": "#2a1700",
+            "on-primary-fixed-variant": "#003ea8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-container-low": "#f2f3ff",
+            "primary-container": "#2563eb",
+            "inverse-primary": "#b4c5ff",
+            "inverse-surface": "#283044"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.75rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: max(884px, 100dvh);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1;
+    }
+    .glow-blue {
+      box-shadow: 0 8px 20px -3px rgba(37, 99, 235, 0.35);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen pb-28 selection:bg-blue-600 selection:text-white">
+<!-- Top Navigation Header -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-16 w-full max-w-lg mx-auto bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm font-bold text-lg">
+<span class="material-symbols-outlined text-[22px]">translate</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-slate-900 font-extrabold tracking-tight block leading-tight text-lg">Voca</span>
+
+</div>
+
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Mobile Container -->
+<main class="w-full max-w-lg mx-auto px-4 pt-20 flex flex-col gap-5">
+<!-- Header Section -->
+<div class="flex items-start justify-between mt-2">
+<div>
+<h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">
+        Vokabel-Pakete
+      </h1>
+
+</div>
+<span class="text-xs font-medium text-slate-400 py-1.5">3 / 3</span>
+</div>
+<!-- Neutral Statistics Summary Banner -->
+<div class="rounded-2xl bg-white border border-slate-200/80 p-4 shadow-sm"><div class="flex items-center justify-between pb-3 border-b border-slate-100"><div class="text-sm font-semibold text-slate-900">Übersicht</div><div class="text-xs text-slate-500 font-medium">3 Pakete</div></div><div class="mt-3 grid grid-cols-4 gap-2 text-center"><div><div class="text-base font-bold text-slate-900">12</div><div class="text-[11px] text-slate-500 font-medium">Gemeistert</div></div><div class="border-l border-slate-100"><div><span class="text-base font-bold text-slate-900">23</span></div><div class="text-[11px] text-slate-500 font-medium">Im Training</div></div><div class="border-l border-slate-100"><div><span class="text-base font-bold text-slate-900">29</span></div><div class="text-[11px] text-slate-500 font-medium">Neu</div></div><div class="border-l border-slate-100"><div><span class="text-base font-bold text-slate-900">78%</span></div><div class="text-[11px] text-slate-500 font-medium">Erfolgsquote</div></div></div></div>
+<!-- Date Range Quick Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 -mx-4 px-4">
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold bg-blue-600 text-white flex items-center gap-1.5 shadow-sm active:scale-95 transition-all">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+        Aktuell (März)
+      </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors active:scale-95 shadow-sm">
+        Geplant
+      </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors active:scale-95 shadow-sm">
+        Archiviert
+      </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors active:scale-95 shadow-sm">
+        Alle
+      </button>
+</div>
+<!-- List of Package Cards -->
+<div class="flex flex-col gap-4">
+<!-- Package Card 1: Active March Package -->
+<article class="rounded-2xl bg-white border border-slate-200/90 p-4 shadow-sm hover:shadow-md transition-all flex flex-col gap-3.5"><div class="flex items-start justify-between gap-2"><div class="flex-1"><div class="flex items-center gap-1.5 flex-wrap mb-1.5"><span class="text-slate-500 text-xs font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span>01.03.2026 – 31.03.2026</span></div><div class="flex items-center gap-2"><h2 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2"><span class="material-symbols-outlined text-blue-600 text-[20px]">menu_book</span>C1 Akademischer Wortschatz</h2><button aria-label="Paket 1 umbenennen" class="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200/60 text-xs font-semibold active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]">edit</span><span class="">Umbenennen</span></button></div></div><button aria-label="Optionen" class="text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100 transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span></button></div><div class="space-y-1.5"><div class="flex justify-between items-baseline text-xs"><span class="text-slate-700 font-medium">24 von 30 Vokabeln gemeistert</span><span class="font-bold text-blue-600">80% Fortschritt</span></div><div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-blue-600 rounded-full transition-all duration-500" style="width: 80%"></div></div></div><div class="grid grid-cols-3 gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200/60"><div class="flex flex-col items-center justify-center py-0.5"><div class="flex items-center gap-1 text-emerald-600 mb-0.5"><span class="material-symbols-outlined text-[16px]">check_circle</span><span class="font-bold text-sm text-slate-900">12</span></div><span class="text-[11px] text-slate-500 font-medium">Gemeistert</span></div><div class="flex flex-col items-center justify-center py-0.5 border-x border-slate-200"><div class="flex items-center gap-1 text-blue-600 mb-0.5"><span class="material-symbols-outlined text-[16px]">sync</span><span class="font-bold text-sm text-slate-900">8</span></div><span class="text-[11px] text-slate-500 font-medium">Im Training</span></div><div class="flex flex-col items-center justify-center py-0.5"><div class="flex items-center gap-1 text-slate-500 mb-0.5"><span class="material-symbols-outlined text-[16px]">bookmark</span><span class="font-bold text-sm text-slate-900">4</span></div><span class="text-[11px] text-slate-500 font-medium">Neu</span></div></div><div class="flex items-center gap-2 pt-0.5"><button class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 glow-blue active:scale-95 transition-all"><span class="material-symbols-outlined text-[18px]">school</span><span class="">Paket lernen</span></button><button aria-label="Details anzeigen" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-600 active:scale-95 transition-all"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></article>
+<!-- Package Card 2: Upcoming Vacation Spanish Package -->
+<article class="rounded-2xl bg-white border border-slate-200/90 p-4 shadow-sm hover:shadow-md transition-all flex flex-col gap-3.5"><div class="flex items-start justify-between gap-2"><div class="flex-1"><div class="flex items-center gap-1.5 flex-wrap mb-1.5"><span class="text-slate-500 text-xs font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span>10.04.2026 – 25.04.2026</span></div><div class="flex items-center gap-2"><h2 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2"><span class="material-symbols-outlined text-blue-600 text-[20px]">flight_takeoff</span>Urlaub &amp; Konversation Spanisch</h2><button aria-label="Paket 2 umbenennen" class="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200/60 text-xs font-semibold active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]">edit</span><span class="">Umbenennen</span></button></div></div><button aria-label="Optionen" class="text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100 transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span></button></div><div class="space-y-1.5"><div class="flex justify-between items-baseline text-xs"><span class="text-slate-600 font-medium">15 Vokabeln angelegt</span></div><div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-amber-500 rounded-full" style="width: 10%"></div></div></div><div class="bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200/60 text-xs text-slate-600 font-medium">15 Vokabeln angelegt</div><div class="flex items-center gap-2 pt-0.5"><button class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 active:scale-95 transition-all"><span class="material-symbols-outlined text-[16px] text-blue-600">add_circle</span><span class="">Vokabeln hinzufügen</span></button><button class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 text-xs font-semibold rounded-xl flex items-center justify-center gap-1 active:scale-95 transition-all"><span class="material-symbols-outlined text-[16px]">edit</span><span class="">Bearbeiten</span></button></div></article>
+<!-- Package Card 3: Completed Business Negotiations Package -->
+<article class="rounded-2xl bg-white border border-slate-200/80 p-4 shadow-sm flex flex-col gap-3.5"><div class="flex items-start justify-between gap-2"><div class="flex-1"><div class="flex items-center gap-1.5 flex-wrap mb-1.5"><span class="text-slate-500 text-xs font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span>15.01.2026 – 28.02.2026</span></div><div class="flex items-center gap-2"><h2 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2"><span class="material-symbols-outlined text-blue-600 text-[20px]">business_center</span>Business Negotiations</h2><button aria-label="Paket 3 umbenennen" class="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200/60 text-xs font-semibold active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]">edit</span><span class="">Umbenennen</span></button></div></div><button aria-label="Optionen" class="text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100 transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span></button></div><div class="flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200/60"><div class="text-xs font-semibold text-slate-700">45 / 45 gemeistert</div><button class="text-xs bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1.5 rounded-lg font-medium active:scale-95 transition-all shadow-sm">Wiederholen</button></div></article>
+</div>
+<!-- Primary Action Button: Create Package -->
+<div class="pt-1"><div class="w-full py-2.5 px-4 text-center text-xs text-slate-400 font-medium">3 von 3 Paketen belegt</div></div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-4 py-2 w-full max-w-lg mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-lg">
+<!-- Tab 1: Übersicht -->
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1 gap-1 hover:text-blue-600 transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+<span class="text-[11px] font-medium">Übersicht</span>
+</a>
+<!-- Tab 2: Lernen -->
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1 gap-1 hover:text-blue-600 transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">school</span>
+<span class="text-[11px] font-medium">Lernen</span>
+</a>
+<!-- Tab 3: Pakete (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-blue-600 px-3 py-1 gap-1 active:scale-95" href="#">
+<div class="px-3 py-0.5 rounded-full bg-blue-50">
+<span class="material-symbols-outlined fill-1 text-[22px]">folder</span>
+</div>
+<span class="text-[11px] font-bold">Pakete</span>
+</a>
+<!-- Tab 4: Einstellungen -->
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1 gap-1 hover:text-blue-600 transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+<span class="text-[11px] font-medium">Einstellungen</span>
+</a>
+</nav>
+<!-- Micro-Interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('main > div:nth-of-type(3) button');
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => {
+            b.className = 'whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors active:scale-95 shadow-sm';
+            const dot = b.querySelector('span.rounded-full');
+            if (dot) dot.remove();
+          });
+          btn.className = 'whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold bg-blue-600 text-white flex items-center gap-1.5 shadow-sm active:scale-95 transition-all';
+          const newDot = document.createElement('span');
+          newDot.className = 'w-1.5 h-1.5 rounded-full bg-white';
+          btn.prepend(newDot);
+        });
+      });
+    });
+  </script>
+
+
+</body></html>

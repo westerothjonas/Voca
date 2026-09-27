@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="de" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Voca - Einstellungen</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-surface-variant": "#434655",
+          "on-background": "#0f172a",
+          "outline-variant": "#e2e8f0",
+          "on-primary-container": "#eeefff",
+          "primary": "#2563eb",
+          "primary-hover": "#1d4ed8",
+          "error": "#ba1a1a",
+          "background": "#f8fafc",
+          "surface-container-high": "#f1f5f9",
+          "surface-bright": "#ffffff",
+          "on-secondary": "#ffffff",
+          "secondary": "#0284c7",
+          "surface-container": "#f8fafc",
+          "on-surface": "#0f172a",
+          "surface-container-highest": "#e2e8f0",
+          "surface": "#ffffff",
+          "outline": "#94a3b8",
+          "on-primary": "#ffffff",
+          "surface-container-low": "#ffffff",
+          "primary-container": "#2563eb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.75rem",
+          "lg": "1rem",
+          "xl": "1.25rem",
+          "full": "9999px"
+        },
+        "fontFamily": {
+          "sans": ["Plus Jakarta Sans", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .material-symbols-outlined.fill {
+    font-variation-settings: 'FILL' 1;
+  }
+  body {
+    min-height: max(884px, 100dvh);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-28 select-none">
+<!-- Top App Bar Navigation Shell -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-16 w-full max-w-lg mx-auto bg-white/80 backdrop-blur-md border-b border-slate-200/60">
+<div class="flex items-center gap-3">
+<button aria-label="Zurück" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 hover:bg-slate-200 transition-colors active:scale-95 text-slate-700">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+</button>
+<div>
+<h1 class="text-lg font-bold text-slate-900 tracking-tight leading-none">
+        Einstellungen
+      </h1>
+
+</div>
+</div>
+
+</header>
+<!-- Main Container -->
+<main class="w-full max-w-lg mx-auto px-4 pt-20 space-y-6">
+<!-- Profile Summary Card -->
+<section class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] relative overflow-hidden">
+<div class="flex items-center gap-3.5 mb-4">
+<div class="w-13 h-13 w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border-2 border-blue-200/70 relative font-bold text-base shadow-sm">
+        AM
+        
+</div>
+<div><h2 class="text-base font-bold text-slate-900">Alex M.</h2></div>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="grid grid-cols-3 gap-2 pt-3 border-t border-slate-100 text-center">
+<div class="bg-slate-50 rounded-xl p-2.5">
+<div class="flex items-center justify-center gap-1 text-blue-600">
+<span class="material-symbols-outlined text-sm font-semibold">repeat</span>
+<span class="text-lg font-bold">128</span>
+</div>
+<span class="text-[11px] text-slate-500 font-medium">Gelernt</span>
+</div>
+<div class="bg-slate-50 rounded-xl p-2.5">
+<div class="flex items-center justify-center gap-1 text-slate-800">
+<span class="material-symbols-outlined text-sm font-semibold">translate</span>
+<span class="text-lg font-bold">42</span>
+</div>
+<span class="text-[11px] text-slate-500 font-medium">Aktive Vokabeln</span>
+</div>
+<div class="bg-slate-50 rounded-xl p-2.5">
+<div class="flex items-center justify-center gap-1 text-indigo-600">
+<span class="material-symbols-outlined text-sm font-semibold">local_fire_department</span>
+<span class="text-lg font-bold">8</span>
+</div>
+<span class="text-[11px] text-slate-500 font-medium">Tage Streak</span>
+</div>
+</div>
+</section>
+<!-- Section 1: Lernen & Erinnerungen -->
+<section class="space-y-2">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-blue-600 text-base">notifications_active</span>
+<h3 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Lernen &amp; Erinnerungen</h3>
+</div>
+<div class="bg-white border border-slate-200/80 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] divide-y divide-slate-100">
+<!-- Item: Daily Reminder -->
+<div class="p-4 flex items-center justify-between">
+<div class="space-y-0.5 pr-2">
+<span class="text-sm font-semibold text-slate-900 block">Tägliche Lernerinnerung</span>
+<span class="text-xs text-slate-500 block">Sanfter Impuls zum täglichen Vokabeltraining</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 font-semibold text-xs text-slate-700">19:00 Uhr</span>
+<!-- Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</div>
+</div>
+<!-- Item: Daily Goal -->
+<div class="p-4 space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Tagesziel</span>
+<span class="text-xs text-slate-500 block">Mindestanzahl Wiederholungen pro Tag</span>
+</div>
+<span class="text-xs text-slate-500 font-medium">10 Vokabeln / Tag</span>
+</div>
+<!-- Goal Choice Pills -->
+<div class="grid grid-cols-3 gap-2 pt-0.5">
+<button class="py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-xs font-medium text-slate-700 border border-slate-200 transition-colors">
+            5 Vokabeln
+          </button>
+<button class="py-2 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-sm hover:bg-blue-700 transition-colors">
+            10 Vokabeln
+          </button>
+<button class="py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-xs font-medium text-slate-700 border border-slate-200 transition-colors">
+            20 Vokabeln
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Audio & Aussprache -->
+
+<!-- Section 3: Lernpakete & Daten -->
+<section class="space-y-2">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-blue-600 text-base">folder_shared</span>
+<h3 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Lernpakete &amp; Daten</h3>
+</div>
+<div class="bg-white border border-slate-200/80 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] divide-y divide-slate-100">
+<!-- Manage Packages Item -->
+<button class="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition-colors active:scale-[0.99]"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600"><span class="material-symbols-outlined text-lg">folder_open</span></div><div><span class="text-sm font-semibold text-slate-900 block">Paketverwaltung öffnen</span><span class="text-xs text-slate-500">Pakete auswählen &amp; verwalten</span></div></div><div class="flex items-center text-slate-400"><span class="material-symbols-outlined text-base">chevron_right</span></div></button>
+<!-- Cloud Sync Item -->
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
+<span class="material-symbols-outlined text-lg">cloud_sync</span>
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Cloud Backup &amp; Sync</span>
+<span class="text-xs text-slate-500">Zuletzt synchronisiert: Heute 16:45</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs border border-slate-200 transition-colors active:scale-95">
+          Sync
+        </button>
+</div>
+<!-- Export Item -->
+
+</div>
+</section>
+<!-- Section 4: Erscheinungsbild & System -->
+<section class="space-y-2">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-blue-600 text-base">palette</span>
+<h3 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Erscheinungsbild &amp; System</h3>
+</div>
+<div class="bg-white border border-slate-200/80 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] divide-y divide-slate-100">
+<!-- Accent Color Selection -->
+<div class="p-4 space-y-2.5">
+<span class="text-sm font-semibold text-slate-900 block">Akzentfarbe</span>
+<div class="flex items-center gap-2.5">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border-2 border-blue-600 text-blue-700 font-semibold text-xs shadow-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span>
+            Modern Blau
+          </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-slate-900 text-xs font-medium">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+            Smaragd
+          </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-slate-900 text-xs font-medium">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+            Koralle
+          </button>
+</div>
+</div>
+<!-- Haptics Toggle -->
+<div class="p-4 flex items-center justify-between">
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Haptisches Feedback</span>
+<span class="text-xs text-slate-500 block">Sanftes Vibrieren bei Bewertung und Tasten</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</div>
+<!-- App Meta / Version -->
+<div class="p-4 flex items-center justify-between">
+<div>
+<span class="text-sm text-slate-900 block font-semibold">Über Voca</span>
+<span class="text-xs text-slate-500">Version 2.4.0 (Build 124)</span>
+</div>
+
+</div>
+</div>
+</section>
+<!-- Logout Button -->
+<div class="pt-2 pb-6 text-center">
+<button class="text-red-600 hover:text-red-700 font-semibold text-xs hover:underline inline-flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-base">logout</span>
+      Voca-Konto abmelden
+    </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-4 py-2 max-w-lg mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-sm">
+<!-- Destination 1: Übersicht -->
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1 gap-1 hover:text-blue-600 transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-[11px] font-medium">Übersicht</span>
+</a>
+<!-- Destination 2: Lernen -->
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1 gap-1 hover:text-blue-600 transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl">school</span>
+<span class="text-[11px] font-medium">Lernen</span>
+</a>
+<!-- Destination 3: Pakete -->
+<a class="flex flex-col items-center justify-center text-slate-500 px-3 py-1 gap-1 hover:text-blue-600 transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+<span class="text-[11px] font-medium">Pakete</span>
+</a>
+<!-- Destination 4: Einstellungen (ACTIVE MATCH) -->
+<a class="flex flex-col items-center justify-center text-blue-600 bg-blue-50/80 rounded-xl px-3 py-1 gap-1 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-xl fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[11px] font-bold">Einstellungen</span>
+</a>
+</nav>
+
+
+</body></html>
